@@ -14,22 +14,18 @@ class BSTree {
 
         bool find(T data) { 
             // TODO
-            return true;
         } 
 
         bool insert(T data) {
             // TODO
-            return true;
         }
 
         bool remove(T data) {
             // TODO
-            return true;
         }
 
         unsigned int size() {
             // TODO
-            return 4;
         }
 
         void traversePreOrder() {
@@ -46,12 +42,10 @@ class BSTree {
 
         Iterator<T> begin() {
             // TODO
-            return Iterator<T>(root);
         }
 
         Iterator<T> end() { 
             // TODO
-            return Iterator<T>(nullptr);
         }
 
         ~BSTree() {
