@@ -17,24 +17,29 @@ class Iterator {
             // TODO
         }
 
-        Iterator<T> operator=(Iterator<T> other) {
+        Iterator<T> operator=(Iterator<T> other) {          
             // TODO
+            return *this;
         }
 
         bool operator!=(Iterator<T> other) {
             // TODO
+            return false;
         }
 
         Iterator<T> operator++() {
             // TODO
+            return *this;
         }
 
         Iterator<T> operator--() {
             // TODO
+            return *this;
         }
 
         T operator*() {
             // TODO
+            return current->data;
         }
 };
 
