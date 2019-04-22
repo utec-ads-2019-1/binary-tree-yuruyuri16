@@ -18,7 +18,7 @@ class Mocker {
             rng.seed(random_device()());
         }
 
-        int generateRandomInt(int min = MIN);
+        int generateRandomInt(int min = MIN, int max = MAX);
         char generateRandomChar();
 
         template <typename T>

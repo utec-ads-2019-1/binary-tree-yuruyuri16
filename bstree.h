@@ -2,6 +2,7 @@
 #define BSTREE_H
 
 #include "node.h"
+#include "iterator.h"
 
 template <typename T> 
 class BSTree {
@@ -11,16 +12,24 @@ class BSTree {
     public:
         BSTree() : root(nullptr) {};
 
-        T find(T data) { 
+        bool find(T data) { 
             // TODO
+            return true;
         } 
 
         bool insert(T data) {
             // TODO
+            return true;
         }
 
         bool remove(T data) {
             // TODO
+            return true;
+        }
+
+        unsigned int size() {
+            // TODO
+            return 4;
         }
 
         void traversePreOrder() {
@@ -37,10 +46,12 @@ class BSTree {
 
         Iterator<T> begin() {
             // TODO
+            return Iterator<T>(root);
         }
 
         Iterator<T> end() { 
             // TODO
+            return Iterator<T>(nullptr);
         }
 
         ~BSTree() {
