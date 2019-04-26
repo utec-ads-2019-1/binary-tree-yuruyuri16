@@ -7,8 +7,8 @@
 #include <vector>
 #include <algorithm>   
 
-#include "../mocker/mocker.h"
-#include "../bstree.h"
+#include "../mocker/mocker.hpp"
+#include "../bstree.hpp"
 
 using namespace std;
 

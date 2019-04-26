@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include "node.h"
+#include "node.hpp"
 
 template <typename T> 
 class Iterator {
@@ -13,7 +13,8 @@ class Iterator {
             // TODO
         }
 
-        Iterator(Node<T> *node) {
+        Iterator(Node<T> *node) : current(node)
+		{
             // TODO
         }
 
@@ -33,8 +34,9 @@ class Iterator {
             // TODO
         }
 
-        T operator*() {
-            // TODO
+        T operator*()
+		{
+			return (current->data);
         }
 };
 
