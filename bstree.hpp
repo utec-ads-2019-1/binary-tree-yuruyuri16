@@ -116,6 +116,7 @@ class BSTree {
         void traversePostOrder()
 		{
 			traversePostOrder(root);
+			std::cout << '\n';
 		}
 
 		void traversePostOrder(NodePointer node)
