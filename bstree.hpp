@@ -115,7 +115,18 @@ class BSTree {
 
         void traversePostOrder()
 		{
-			// TODO
+			traversePostOrder(root);
+		}
+
+		void traversePostOrder(NodePointer node)
+		{
+			if (node == nullptr)
+			{
+				return;
+			}
+			traversePostOrder(node->left);
+			traversePostOrder(node->right);
+			std::cout << node->data << ' ';
 		}
 
         Iterator<T> begin() {

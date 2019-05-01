@@ -29,6 +29,7 @@ int main(int argc, char *argv[]) {
 	t.insert(6);
 	t.traverseInOrder();
 	t.traversePreOrder();
+	t.traversePostOrder();
 	if (t.find(13) && t.find(3) && t.find(14) && t.find(1) && t.find(4) && t.find(18) && t.find(2) && t.find(12) && t.find(10) && t.find(5) && t.find(11) && t.find(8) && t.find(7) && t.find(9) && t.find(6))
 	{
 		std::cout << "x\n";
