@@ -26,12 +26,7 @@ int main(int argc, char *argv[]) {
 	t.insert(7);
 	t.insert(9);
 	t.insert(6);
-	t.insert(6);
-	t.traverseInOrder();
-	t.traversePreOrder();
-	t.traversePostOrder();
-	t.traverseInOrder();
-	t.traversePreOrder();
-	t.traversePostOrder();
+	auto it = t.begin();
+	std::cout << *it << '\n';
     return EXIT_SUCCESS;
 }

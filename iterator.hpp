@@ -1,29 +1,38 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
+#include <stack>
+
 #include "node.hpp"
 
 template <typename T> 
 class Iterator {
     private:
         Node<T> *current;
+		std::stack<Node<T>*> st;
 
     public:
-        Iterator() {
-            // TODO
+        Iterator() : current(nullptr)
+		{
         }
 
         Iterator(Node<T> *node) : current(node)
 		{
-            // TODO
+			while (current->left != nullptr)
+			{
+				st.push(current);
+				current = current->left;
+			}
+			st.push(current);
         }
 
         Iterator<T> operator=(Iterator<T> other) {          
-            // TODO
+            this = other;
+			return (*this);
         }
 
         bool operator!=(Iterator<T> other) {
-            // TODO
+            return (current != other.current);
         }
 
         Iterator<T> operator++() {

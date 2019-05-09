@@ -66,8 +66,71 @@ class BSTree {
         }
 
 		bool remove(T data) {
-            // TODO
+			remove(root, data);
+			if (find(data))
+			{
+				return false;
+			}
+			else
+			{
+				--nodes;
+				return true;
+			}
         }
+
+		void remove(NodePointer &node, T data)
+		{
+			NodePointer temp;
+			T minData;
+
+			temp = nullptr;
+			if (data < node->data)
+			{
+				remove(node->left, data);
+			}
+			else if (data > node->data)
+			{
+				remove(node->right, data);
+			}
+			else
+			{
+				if (node->left == nullptr && node->right == nullptr)
+				{
+					delete node;
+					node = nullptr;
+				}
+				else if (node->left == nullptr && node->right != nullptr)
+				{
+					temp = node;
+					node = node->right;
+				}
+				else if (node->right == nullptr && node->left != nullptr)
+				{
+					temp = node;
+					node = node->left;
+				}
+				else
+				{
+					minData = getMin(node->right);
+					node->data = minData;
+					remove(node->right, minData);
+				}
+				delete temp;
+				temp = nullptr;
+			}
+		}
+
+		T getMin(NodePointer node)
+		{
+			if (node->left == nullptr)
+			{
+				return node->data;
+			}
+			else
+			{
+				return getMin(node->left);
+			}
+		}
 
         unsigned int size() {
 			return (nodes);
@@ -130,13 +193,15 @@ class BSTree {
 			std::cout << node->data << ' ';
 		}
 
-        Iterator<T> begin() {
-			return (Iterator<T>(root));
-        }
-
-        Iterator<T> end() { 
-            // TODO
-        }
+        Iterator<T> begin()
+		{
+			return Iterator<T>(root); 
+		}
+		
+		Iterator<T> end()
+		{
+			return Iterator<T>();
+		}
 
         ~BSTree() {
             // TODO
