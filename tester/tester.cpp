@@ -33,6 +33,7 @@ void Tester::testBSFTree(Mocker mocker, vector<T> elements) {
 
     ASSERT(elements.size() == test->size(), "There is a problem with the remove or size");
 
+    // Faltan los iteradores
     /*auto it = test->begin();
     for (int j = 0; j < elements.size() && it != test->end(); ++j) {
         ASSERT(elements.at(j) == *it, "There is a problem with the iterator (++)");
